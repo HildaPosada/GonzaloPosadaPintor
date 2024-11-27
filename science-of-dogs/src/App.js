@@ -83,7 +83,7 @@ const App = () => {
             </a>
           </div>
         </section>
-
+    
         {/* Section 3: Philosophy with Borders */}
         <section
           id="philosophy"
