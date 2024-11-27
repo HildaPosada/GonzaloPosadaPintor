@@ -7,6 +7,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
+      
       {/* Header */}
       <header className="flex justify-between items-center px-6 py-4 bg-red-translucent fixed w-full z-10 backdrop-blur-md">
         <div className="flex items-center">
@@ -35,8 +36,8 @@ const App = () => {
             Philosophy
           </a>
         </nav>
-      </header>
-
+      </header>  
+         
       {/* Main Content */}
       <main className="flex-grow pt-16">
         {/* Section 1: Hero and Booking with Borders */}

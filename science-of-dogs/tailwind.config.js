@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,jsx,ts,tsx}", // Ensure this matches your project structure
+    "./public/index.html",             // Include your HTML template if applicable
   ],
   theme: {
     extend: {
@@ -16,19 +17,7 @@ module.exports = {
           translucent: 'rgba(0, 0, 0, 0.5)', // Black translucent
         },
       },
-      spacing: {
-        slim: '2px', // For slim borders and padding
-      },
-      boxShadow: {
-        'overlay': '0 0 10px rgba(0, 0, 0, 0.5)', // Subtle shadow for overlays
-      },
-      backdropFilter: {
-        blur: 'blur(8px)', // For applying blur to translucent backgrounds
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'), // Optional: Tailwind forms plugin
-    require('@tailwindcss/typography'), // Optional: Tailwind typography plugin
-  ],
+  plugins: [],
 };
