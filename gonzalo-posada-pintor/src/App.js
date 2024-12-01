@@ -58,7 +58,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="btn bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-xl font-bold text-center"
             >
-              Book Now
+              Order Now
             </a>
           </div>
         </section>
@@ -71,7 +71,7 @@ const App = () => {
         >
           <h2 className="text-4xl font-bold text-center mb-6">About Us</h2>
           <p className="text-center text-lg text-red-300 max-w-3xl mx-auto">
-            Welcome back to Science of Dogs! This innovative program, led by Kim, is at the cutting edge of dog education, combining neuroscientific research and psychology to provide an unparalleled experience. You'll have access to the best resources and hands-on teaching, ensuring a humane and transformative experience for both you and your canine companion.
+            Welcome back to the ART Work of Luis Gonzalo Posada Cano
           </p>
           <div className="flex justify-center mt-6">
             <a
