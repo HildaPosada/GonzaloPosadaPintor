@@ -16,7 +16,7 @@ const App = () => {
           </h1>
         </div>
         <nav className="hidden md:flex space-x-8 text-lg font-medium relative">
-          {['Home', 'About', 'Work', 'Services', 'Contact'].map((item, index) => (
+          {['Home', 'Gallery', 'About', 'Contact'].map((item, index) => (
             <a
               key={index}
               href={`#${item.toLowerCase()}`}
@@ -40,7 +40,7 @@ const App = () => {
             isMenuOpen ? 'block' : 'hidden'
           }`}
         >
-          {['Home', 'About', 'Work', 'Services', 'Contact'].map((item, index) => (
+          {['Home', 'Gallery', 'About', 'Contact'].map((item, index) => (
             <a
               key={index}
               href={`#${item.toLowerCase()}`}
@@ -58,19 +58,23 @@ const App = () => {
         <section id="gallery" className="py-16 px-6">
           <h2 className="text-4xl font-bold text-center mb-8">Artwork Gallery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Replace this block with dynamic artwork data */}
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="relative">
+            {/* Dynamic Artwork Data */}
+            {[
+              { id: 1, title: 'Artwork 1', image: '/artwork/artwork1.png', link: 'https://www.etsy.com/listing/artwork1' },
+              { id: 2, title: 'Artwork 2', image: '/artwork/artwork2.png', link: 'https://www.etsy.com/listing/artwork2' },
+              { id: 3, title: 'Artwork 3', image: '/artwork/artwork3.png', link: 'https://www.etsy.com/listing/artwork3' },
+            ].map((art) => (
+              <div key={art.id} className="relative group">
                 <img
-                  src={`/artwork/artwork-${item}.jpg`}
-                  alt={`Artwork ${item}`}
-                  className="w-full h-80 object-cover border border-gray-800"
+                  src={art.image}
+                  alt={art.title}
+                  className="w-full h-auto object-cover border border-gray-800"
                 />
                 <a
-                  href={`https://www.etsy.com/listing/artwork-${item}`}
+                  href={art.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                 >
                   <span className="text-white text-lg font-semibold">Purchase on Etsy</span>
                 </a>
