@@ -9,32 +9,49 @@ const App = () => {
     <div className="min-h-screen flex flex-col bg-black text-white">
       
       {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4 bg-black fixed w-full z-10">
-        <div className="text-3xl font-bold tracking-wide">
-          <h1>Gonzalo Posada Art</h1>
+      <header className="flex justify-between items-center px-8 py-4 bg-black fixed w-full z-10 shadow-md">
+        <div className="flex items-center space-x-4">
+          <h1 className="text-2xl font-bold uppercase tracking-widest">
+            Gonzalo Posada Art
+          </h1>
         </div>
+        <nav className="hidden md:flex space-x-8 text-lg font-medium relative">
+          {['Home', 'About', 'Work', 'Services', 'Contact'].map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="relative group hover:text-red-300 transition-colors duration-300"
+            >
+              {item}
+              <span
+                className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-red-300 transition-all duration-300 group-hover:w-full"
+              ></span>
+            </a>
+          ))}
+        </nav>
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
             {isMenuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
           </button>
         </div>
+        {/* Mobile Menu */}
         <nav
-          className={`${
+          className={`absolute top-16 left-0 w-full bg-black flex flex-col items-center py-4 md:hidden ${
             isMenuOpen ? 'block' : 'hidden'
-          } absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent md:flex space-y-4 md:space-y-0 md:space-x-8 p-6 md:p-0`}
+          }`}
         >
-          <a href="#gallery" className="block md:inline hover:underline">
-            Gallery
-          </a>
-          <a href="#about" className="block md:inline hover:underline">
-            About
-          </a>
-          <a href="#contact" className="block md:inline hover:underline">
-            Contact
-          </a>
+          {['Home', 'About', 'Work', 'Services', 'Contact'].map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="py-2 text-lg hover:text-red-300 transition-colors duration-300"
+            >
+              {item}
+            </a>
+          ))}
         </nav>
-      </header>  
-         
+      </header>
+
       {/* Main Content */}
       <main className="flex-grow pt-20">
         {/* Gallery Section */}
@@ -53,7 +70,8 @@ const App = () => {
                   href={`https://www.etsy.com/listing/artwork-${item}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity"
+                >
                   <span className="text-white text-lg font-semibold">Purchase on Etsy</span>
                 </a>
               </div>
@@ -65,7 +83,7 @@ const App = () => {
         <section id="about" className="py-16 px-6 bg-gray-900">
           <h2 className="text-4xl font-bold text-center mb-8">About the Artist</h2>
           <p className="text-center max-w-3xl mx-auto text-lg text-gray-300">
-            Gonzalo Posada is a Colombian painter whose work captures the vibrant culture and landscapes of his homeland. His art is a reflection of his passion for nature, color, and storytelling. 
+            Gonzalo Posada is a Colombian painter whose work captures the vibrant culture and landscapes of his homeland. His art is a reflection of his passion for nature, color, and storytelling.
           </p>
         </section>
 
@@ -77,7 +95,7 @@ const App = () => {
           </p>
           <div className="flex justify-center mt-6">
             <a
-              href="https://www.instagram.com/gonzaloposadaart"
+              href="https://www.instagram.com/posadagepinturas/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-red-300"

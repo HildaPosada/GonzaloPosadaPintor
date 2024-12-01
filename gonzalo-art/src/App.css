@@ -1,3 +1,24 @@
+/* Navigation hover underline effect */
+nav a {
+  position: relative;
+  display: inline-block;
+}
+
+nav a span {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Position below text */
+  width: 0;
+  height: 2px; /* Line height */
+  background-color: #f87171; /* Red color */
+  transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+nav a:hover span {
+  width: 100%; /* Full-width underline on hover */
+}
+
 /* Slim Borders for Background Sections */
 .bordered-section {
   border: 2px solid black; /* Slim black border */
